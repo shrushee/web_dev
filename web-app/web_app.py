@@ -11,7 +11,7 @@ def upload_file():
         file = request.files["file"]
         file_path = os.path.join(UPLOAD_FOLDER, file.filename)
         file.save(file_path)
-        with open(file_path, "r", encoding = "utf8") as f:
+        with open(file_path, "r", encoding="utf8") as f:
             content = f.read()
         return f"<h3>File content:</h3><pre>{content}</pre>"
     return render_template("index.html")
